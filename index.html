@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="A password generator with adjustable length and characters of choice, with lowercase, uppercase, digits and symbols">
+  <meta name="keywords" content="ashvin, motye, ashvin motye, web developer mauritius, software developer mauritius, password, password generator, password creator">
+
+  <title>Password Creator | Ashvin Motye</title>
+  <link rel="shortcut icon" href="icon.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+ 
+
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112790540-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-112790540-1');
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="password-container">
+      <h1 id="password">your password will appear here</h1>
+    </div>
+
+    <div class="user-selects">
+      <div class="input">
+        <label for="password-length">password length</label>
+        <input type="number" name="password-length" id="password-length" min="8" max="16" value="8">
+      </div>
+
+      <div class="checkboxes">
+
+        <div class="input">
+          <label for="lowercase">lowercase</label>
+          <input type="checkbox" value="lowercase" id="lowercase" checked>
+        </div>
+
+        <div class="input">
+          <label for="uppercase">uppercase</label>
+          <input type="checkbox" value="uppercase" id="uppercase" checked>
+        </div>
+
+        <div class="input">
+          <label for="digits">digits</label>
+          <input type="checkbox" value="digits" id="digits">
+        </div>
+
+        <div class="input">
+          <label for="special">symbols</label>
+          <input type="checkbox" value="special" id="special">
+        </div>
+
+      </div>
+
+      <div class="submit">
+        <input type="submit" value="Create">
+      </div>
+    
+    </div>
+
+    <div id="error"></div>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
