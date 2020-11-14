@@ -1,4 +1,5 @@
 var button = document.querySelector('input[type=\'submit\']');
+var copyBtn = document.querySelector("#copy");
 
 button.addEventListener('click', function(){
 
@@ -37,8 +38,28 @@ button.addEventListener('click', function(){
   passwordElement.innerHTML = password;
   passwordElement.style.color = '#4a4a4a';
   passwordContainer.style.borderColor = '#4a4a4a';
-
+  copyBtn.innerText = "Copy";
 });
+
+copyBtn.addEventListener("click", function(){
+  var password = document.querySelector("#password").innerText;
+  if(password != "your password will appear here") {
+    copyToClipboard( document.querySelector("#password").innerText );
+    copyBtn.innerText = "Copied!";
+  }
+})
+
+function copyToClipboard(str) {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
 
 function createPassword(array, passwordLength) {
   var numberOfComponents = array.length;
